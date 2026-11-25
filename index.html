@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voltori | Smart Gadgets, Delivered</title>
+<meta name="description" content="Voltori - smart gadgets and everyday electronics, shipped across the USA.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">VOLT<span>ORI</span></a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#why">Why Voltori</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="tag">Free shipping on orders over $49</p>
+    <h1>Smart gadgets.<br>Powered for everyday life.</h1>
+    <p class="sub">Chargers, audio, smart-home and desk gear, hand-picked and shipped across the USA.</p>
+    <a href="#shop" class="btn">Shop now</a>
+  </div>
+</section>
+
+<section id="shop" class="wrap section">
+  <h2>Best sellers</h2>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="why" class="why">
+  <div class="wrap grid3">
+    <div><h3>&#9889; Tested picks</h3><p>Every product is checked for quality and safety before it goes live.</p></div>
+    <div><h3>&#128666; Tracked shipping</h3><p>Every order ships with a tracking number. Typical delivery 7 to 14 business days.</p></div>
+    <div><h3>&#128737; 30-day returns</h3><p>Not happy? Contact us within 30 days of delivery for a return or refund.</p></div>
+  </div>
+</section>
+
+<section id="faq" class="wrap section">
+  <h2>FAQ</h2>
+  <details><summary>How long does shipping take?</summary><p>Most orders arrive in 7 to 14 business days within the USA. You get a tracking link by email.</p></details>
+  <details><summary>Do you charge customs or duties?</summary><p>No. Prices shown are the final product price for US customers.</p></details>
+  <details><summary>What is your return policy?</summary><p>30 days from delivery. Items must be unused and in original packaging.</p></details>
+  <details><summary>How do I pay?</summary><p>Secure checkout is coming soon. For now, send your cart to us and we will reply with a payment link.</p></details>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Contact us</h2>
+    <p>Questions or bulk orders? Email <a href="mailto:hello@voltori.store">hello@voltori.store</a></p>
+  </div>
+</section>
+
+<footer class="wrap foot">&copy; <span id="yr"></span> Voltori. All rights reserved.</footer>
+
+<aside id="cart" class="cart">
+  <div class="cart-head"><h3>Your cart</h3><button onclick="toggleCart()">&times;</button></div>
+  <div id="cart-items"></div>
+  <p class="total">Total: $<span id="cart-total">0.00</span></p>
+  <button class="btn full" onclick="checkout()">Checkout</button>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
