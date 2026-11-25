@@ -1,73 +1,466 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Voltori | Smart Gadgets, Delivered</title>
-<meta name="description" content="Voltori - smart gadgets and everyday electronics, shipped across the USA.">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOLTORI — Smart Gadgets. Powered for Everyday Life.</title>
+  <meta name="description" content="VOLTORI storefront — GaN chargers, MagSafe wireless charging, ANC earbuds, smart home & desk essentials. Free shipping over $49." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="nav">
-  <div class="wrap nav-in">
-    <a href="#" class="logo">VOLT<span>ORI</span></a>
-    <nav>
-      <a href="#shop">Shop</a>
-      <a href="#why">Why Voltori</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="cart-btn" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Promotions">
+    <div class="container announcement-inner">
+      <p>
+        ⚡ Free Express Shipping on orders over <strong>$49</strong> &nbsp;·&nbsp; Use code
+        <button type="button" class="promo-pill" id="copyPromoBtn" title="Click to copy promo code">VOLTORI10</button>
+        for <strong>10% OFF</strong>
+      </p>
+    </div>
   </div>
-</header>
 
-<section class="hero">
-  <div class="wrap">
-    <p class="tag">Free shipping on orders over $49</p>
-    <h1>Smart gadgets.<br>Powered for everyday life.</h1>
-    <p class="sub">Chargers, audio, smart-home and desk gear, hand-picked and shipped across the USA.</p>
-    <a href="#shop" class="btn">Shop now</a>
+  <!-- Header / Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="VOLTORI Home">
+        <span class="brand-mark">⚡</span>
+        <span class="brand-name">VOLTORI</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#shop">Shop</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#why-voltori">Why Voltori</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="currency-wrap">
+          <label for="currencySelect" class="sr-only">Currency</label>
+          <select id="currencySelect" class="currency-select" aria-label="Select Currency">
+            <option value="USD">USD $</option>
+            <option value="INR">INR ₹</option>
+            <option value="EUR">EUR €</option>
+          </select>
+        </div>
+
+        <button type="button" class="icon-btn" id="themeToggleBtn" aria-label="Toggle Dark or Light Mode" title="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+
+        <button type="button" class="icon-btn badge-btn" id="wishlistFilterBtn" aria-label="View Saved Wishlist" title="Saved Items">
+          <span>♥</span>
+          <span class="count-badge" id="wishlistCount">0</span>
+        </button>
+
+        <button type="button" class="cart-trigger" id="openCartBtn" aria-label="Open Shopping Cart">
+          <span>🛒</span>
+          <span class="cart-label">Cart</span>
+          <span class="count-badge" id="cartCount">0</span>
+        </button>
+
+        <button type="button" class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="#shop" class="mobile-nav-link">Shop</a>
+      <a href="#bundles" class="mobile-nav-link">Bundles</a>
+      <a href="#why-voltori" class="mobile-nav-link">Why Voltori</a>
+      <a href="#faq" class="mobile-nav-link">FAQ</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">2026 Smart Hardware Collection</span>
+          <h1>Smart gadgets.<br />Powered for everyday life.</h1>
+          <p class="hero-sub">
+            Precision GaN charging, magnetic power, studio-grade ANC audio, and minimalist desk gear engineered for speed, safety, and zero clutter.
+          </p>
+          <div class="hero-cta">
+            <a href="#shop" class="btn btn-primary">Shop Best Sellers →</a>
+            <a href="#bundles" class="btn btn-secondary">Build a Desk Bundle (Save 15%)</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>4.9 ★</strong>
+              <span>12,400+ Verified Reviews</span>
+            </div>
+            <div class="metric">
+              <strong>2-Year</strong>
+              <span>Instant Replacement Warranty</span>
+            </div>
+            <div class="metric">
+              <strong>30-Day</strong>
+              <span>Risk-Free Returns</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img src="assets/hero-desk.jpg" alt="VOLTORI Smart Tech Desk Setup" />
+            <div class="hero-float-card">
+              <span class="pulse-dot"></span>
+              <div>
+                <strong>GaN III Fast Charge</strong>
+                <small>Up to 65W–100W PD · 40% cooler</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop & Filter Section -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Best Sellers &amp; Gear</span>
+            <h2>Shop the Collection</h2>
+          </div>
+          <div class="shop-controls">
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input type="search" id="searchInput" placeholder="Search chargers, earbuds, desk..." aria-label="Search products" />
+            </div>
+            <select id="sortSelect" class="sort-select" aria-label="Sort products">
+              <option value="featured">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-bar" id="categoryBar" role="tablist" aria-label="Product Categories">
+          <button type="button" class="cat-pill active" data-category="All">All</button>
+          <button type="button" class="cat-pill" data-category="Charging">Charging</button>
+          <button type="button" class="cat-pill" data-category="Audio">Audio</button>
+          <button type="button" class="cat-pill" data-category="Smart Home">Smart Home</button>
+          <button type="button" class="cat-pill" data-category="Desk">Desk</button>
+          <button type="button" class="cat-pill" data-category="Saved">Saved ♥</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="productGrid"></div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" hidden>
+          <p>No gadgets matched your filter.</p>
+          <button type="button" class="btn btn-secondary" id="resetFiltersBtn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Bundle Section -->
+    <section class="section section-alt" id="bundles">
+      <div class="container">
+        <div class="bundle-card">
+          <div class="bundle-info">
+            <span class="eyebrow">Smart Value Bundle · Save 15%</span>
+            <h2>The Ultimate Power &amp; Desk Kit</h2>
+            <p>
+              Pair the <strong>MagSafe Wireless Charger 15W</strong>, <strong>65W GaN USB-C Charger</strong>, and <strong>ANC Wireless Earbuds</strong> into one seamless daily carry &amp; desk setup.
+            </p>
+            <ul class="bundle-list">
+              <li>✓ MagSafe Wireless Charger 15W ($39.00)</li>
+              <li>✓ 65W GaN USB-C Charger ($49.00)</li>
+              <li>✓ ANC Wireless Earbuds ($79.00)</li>
+            </ul>
+            <div class="bundle-pricing">
+              <span class="bundle-old" id="bundleOldPrice">$167.00</span>
+              <span class="bundle-new" id="bundleNewPrice">$141.95</span>
+              <span class="bundle-save">Save 15% + Free Express Shipping</span>
+            </div>
+            <button type="button" class="btn btn-primary" id="addBundleBtn">Add Complete Bundle to Cart</button>
+          </div>
+          <div class="bundle-preview">
+            <img src="assets/magsafe-charger.jpg" alt="MagSafe Wireless Charger" />
+            <img src="assets/gan-charger-65w.jpg" alt="65W GaN Charger" />
+            <img src="assets/anc-earbuds.jpg" alt="ANC Wireless Earbuds" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Voltori Section -->
+    <section class="section" id="why-voltori">
+      <div class="container">
+        <div class="section-header center">
+          <div>
+            <span class="eyebrow">Built Different</span>
+            <h2>Why Choose VOLTORI</h2>
+          </div>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>GaN III Efficiency</h3>
+            <p>Next-gen Gallium Nitride semiconductors deliver full 65W–100W laptop &amp; phone power in half the size with active thermal control.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>MultiProtect Safety</h3>
+            <p>Real-time voltage, temperature, and surge monitoring keeps your devices protected overnight and on the road.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🚚</div>
+            <h3>Free Shipping $49+</h3>
+            <p>Fast tracked dispatch on all orders over $49, backed by our 30-day no-questions-asked return policy.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🔁</div>
+            <h3>2-Year Warranty</h3>
+            <p>Every VOLTORI device is covered by a 24-month instant replacement guarantee—no complicated forms.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt" id="faq">
+      <div class="container faq-container">
+        <div class="section-header center">
+          <div>
+            <span class="eyebrow">Got Questions?</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+        </div>
+        <div class="faq-list" id="faqList">
+          <div class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">
+              <span>How fast is shipping and when is it free?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Orders over $49 automatically qualify for Free Express Shipping (2–4 business days). Orders under $49 ship for a flat $5.99.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">
+              <span>Are VOLTORI chargers compatible with iPhone, Samsung, and MacBook?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Yes! Our USB-C GaN chargers support USB-PD 3.0 &amp; PPS fast charging for MacBook Air/Pro, iPhone 15/16/17, Samsung Galaxy, iPad, and Steam Deck.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">
+              <span>Do promo codes work on discounted bundles?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Yes! Try code <strong>VOLTORI10</strong> (10% off) or <strong>WELCOME15</strong> (15% off) directly inside the Cart Drawer before checkout.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">
+              <span>What is covered under the 2-Year Warranty?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">
+              <p>Any hardware defect, battery degradation below 80%, or port failure within 24 months is replaced free of charge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Newsletter Section -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <span class="eyebrow">24/7 Support</span>
+          <h2>Get in Touch</h2>
+          <p>Need help choosing the right charger or tracking an order? Drop us a message and we'll reply within 2 hours.</p>
+          <form id="contactForm" class="stack-form">
+            <div class="form-row">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" required placeholder="Alex Rivera" />
+            </div>
+            <div class="form-row">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" required placeholder="you@example.com" />
+            </div>
+            <div class="form-row">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="3" required placeholder="Tell us how we can help..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <div class="newsletter-card">
+          <span class="eyebrow">VIP Drops</span>
+          <h2>Join the VOLTORI Club</h2>
+          <p>Get early access to new GaN &amp; smart desk drops plus an instant <strong>15% OFF</strong> welcome code.</p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input type="email" id="newsletterEmail" required placeholder="Enter your email address" aria-label="Newsletter Email" />
+            <button type="submit" class="btn btn-primary">Unlock 15% Off</button>
+          </form>
+          <div class="newsletter-perks">
+            <span>✓ Exclusive member pricing</span>
+            <span>✓ Priority warranty support</span>
+            <span>✓ Zero spam, unsubscribe anytime</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand"><span class="brand-mark">⚡</span><span class="brand-name">VOLTORI</span></div>
+        <p class="footer-note">Smart gadgets. Powered for everyday life.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#shop">Shop</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#why-voltori">Why Voltori</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 VOLTORI Store. Built for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quickViewModal" hidden role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+    <div class="modal-card quickview-card">
+      <button type="button" class="modal-close" id="closeQuickViewBtn" aria-label="Close Quick View">✕</button>
+      <div class="qv-grid">
+        <div class="qv-media">
+          <img id="qvImg" src="" alt="" />
+        </div>
+        <div class="qv-body">
+          <span class="qv-category" id="qvCategory"></span>
+          <h3 id="qvTitle"></h3>
+          <div class="qv-rating" id="qvRating"></div>
+          <div class="qv-price" id="qvPrice"></div>
+          <p class="qv-desc" id="qvDesc"></p>
+          <ul class="qv-specs" id="qvSpecs"></ul>
+          <div class="qv-variants">
+            <span class="qv-label">Finish:</span>
+            <div class="variant-pills" id="qvVariants"></div>
+          </div>
+          <div class="qv-actions">
+            <div class="qty-control">
+              <button type="button" id="qvQtyMinus" aria-label="Decrease quantity">−</button>
+              <span id="qvQty">1</span>
+              <button type="button" id="qvQtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+            <button type="button" class="btn btn-primary" id="qvAddBtn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<section id="shop" class="wrap section">
-  <h2>Best sellers</h2>
-  <div class="filters" id="filters"></div>
-  <div class="grid" id="grid"></div>
-</section>
+  <!-- Slide-Over Cart Drawer -->
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart" hidden>
+    <div class="cart-header">
+      <h3>Your Cart <span id="drawerCartCount">(0)</span></h3>
+      <button type="button" class="modal-close" id="closeCartBtn" aria-label="Close Cart">✕</button>
+    </div>
 
-<section id="why" class="why">
-  <div class="wrap grid3">
-    <div><h3>&#9889; Tested picks</h3><p>Every product is checked for quality and safety before it goes live.</p></div>
-    <div><h3>&#128666; Tracked shipping</h3><p>Every order ships with a tracking number. Typical delivery 7 to 14 business days.</p></div>
-    <div><h3>&#128737; 30-day returns</h3><p>Not happy? Contact us within 30 days of delivery for a return or refund.</p></div>
+    <!-- Free Shipping Progress -->
+    <div class="shipping-meter">
+      <p id="shippingMsg">Add <strong>$49.00</strong> more for Free Express Shipping</p>
+      <div class="progress-track">
+        <div class="progress-fill" id="shippingProgress" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer" id="cartFooter">
+      <form class="promo-form" id="promoForm">
+        <input type="text" id="promoInput" placeholder="Promo code (try VOLTORI10)" aria-label="Promo code" />
+        <button type="submit" class="btn btn-secondary">Apply</button>
+      </form>
+      <div class="cart-totals">
+        <div class="total-row"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+        <div class="total-row discount-row" id="discountRow" hidden><span>Discount</span><span id="cartDiscount">-$0.00</span></div>
+        <div class="total-row"><span>Shipping</span><span id="cartShipping">$0.00</span></div>
+        <div class="total-row grand"><span>Total</span><span id="cartTotal">$0.00</span></div>
+      </div>
+      <button type="button" class="btn btn-primary full-width" id="openCheckoutBtn">Proceed to Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div class="modal-backdrop" id="checkoutModal" hidden role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal-card checkout-card">
+      <button type="button" class="modal-close" id="closeCheckoutBtn" aria-label="Close Checkout">✕</button>
+      <div id="checkoutFormWrap">
+        <h3 id="checkoutTitle">Express Checkout</h3>
+        <p class="checkout-sub">Complete your order in seconds.</p>
+        <form id="checkoutForm" class="stack-form">
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="coName">Full Name</label>
+              <input type="text" id="coName" required placeholder="Alex Rivera" />
+            </div>
+            <div class="form-row">
+              <label for="coEmail">Email</label>
+              <input type="email" id="coEmail" required placeholder="alex@example.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="coAddress">Shipping Address</label>
+            <input type="text" id="coAddress" required placeholder="123 Tech Park Ave, Sector 14" />
+          </div>
+          <div class="form-row">
+            <label>Payment Method</label>
+            <div class="payment-options">
+              <label class="pay-opt"><input type="radio" name="payMethod" value="Card" checked /> 💳 Credit / Debit Card</label>
+              <label class="pay-opt"><input type="radio" name="payMethod" value="UPI" /> 📱 UPI / Instant Pay</label>
+              <label class="pay-opt"><input type="radio" name="payMethod" value="COD" /> 📦 Cash on Delivery</label>
+            </div>
+          </div>
+          <div class="checkout-summary-box">
+            <span>Order Total:</span>
+            <strong id="checkoutTotalDisplay">$0.00</strong>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">Place Order Now</button>
+        </form>
+      </div>
+
+      <div id="checkoutSuccessWrap" class="checkout-success" hidden>
+        <div class="success-icon">🎉</div>
+        <h3>Order Confirmed!</h3>
+        <p>Thank you for shopping with <strong>VOLTORI</strong>.</p>
+        <div class="order-receipt">
+          <span>Order ID: <strong id="orderIdText">#VLT-0000</strong></span>
+          <span>Estimated Delivery: <strong>2–4 Business Days</strong></span>
+        </div>
+        <button type="button" class="btn btn-primary" id="continueShoppingBtn">Continue Shopping</button>
+      </div>
+    </div>
   </div>
-</section>
 
-<section id="faq" class="wrap section">
-  <h2>FAQ</h2>
-  <details><summary>How long does shipping take?</summary><p>Most orders arrive in 7 to 14 business days within the USA. You get a tracking link by email.</p></details>
-  <details><summary>Do you charge customs or duties?</summary><p>No. Prices shown are the final product price for US customers.</p></details>
-  <details><summary>What is your return policy?</summary><p>30 days from delivery. Items must be unused and in original packaging.</p></details>
-  <details><summary>How do I pay?</summary><p>Secure checkout is coming soon. For now, send your cart to us and we will reply with a payment link.</p></details>
-</section>
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-<section id="contact" class="contact">
-  <div class="wrap">
-    <h2>Contact us</h2>
-    <p>Questions or bulk orders? Email <a href="mailto:hello@voltori.store">hello@voltori.store</a></p>
-  </div>
-</section>
-
-<footer class="wrap foot">&copy; <span id="yr"></span> Voltori. All rights reserved.</footer>
-
-<aside id="cart" class="cart">
-  <div class="cart-head"><h3>Your cart</h3><button onclick="toggleCart()">&times;</button></div>
-  <div id="cart-items"></div>
-  <p class="total">Total: $<span id="cart-total">0.00</span></p>
-  <button class="btn full" onclick="checkout()">Checkout</button>
-</aside>
-
-<script src="script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
